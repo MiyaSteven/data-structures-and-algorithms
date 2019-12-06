@@ -13,7 +13,7 @@ const greeting = (word) => {
 };
 
 const speaker = (message, callback) => {
-    return callback(message);
+    return message.toUpperCase();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +148,7 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return the message with all uppercase characters', () => {
     expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
   });
