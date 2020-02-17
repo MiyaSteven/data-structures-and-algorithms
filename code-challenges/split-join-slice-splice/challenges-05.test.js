@@ -60,7 +60,7 @@ const gruffaloCrumble = {
     '1 pound baking powder',
     '1 pound cinnamon',
     '6 gallons melted butter',
-    '2 gallons fresh water',
+    '2 gallons fresh water'
   ],
   steps: [
     'Pre-heat a large oven to 375',
@@ -71,8 +71,8 @@ const gruffaloCrumble = {
     'Combine gruffalo compote with water to maintain moisture in the oven',
     'Fold together remaining ingredients to make the crisp',
     'Spread the crisp evenly over the gruffalo mixture',
-    'Bake for 12-15 hours',
-  ]
+    'Bake for 12-15 hours'
+  ],
 };
 
 
@@ -97,9 +97,9 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   recipe.ingredients.forEach(string => {
-      result.push(
-          string.split(' ').splice(2).join(' ')
-      );
+    result.push(
+      string.split(' ').splice(2).join(' ')
+    );
   });
   return result;
 };
@@ -117,8 +117,8 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   recipe.steps.forEach(step => {
-      result.push(
-          step.split(' ')[0]
+    result.push(
+      step.split(' ')[0]
     );
   });
   return result;
@@ -172,7 +172,6 @@ const removeLastCharacters = (str, numberOfCharacters) => {
   }
 };
 
-//real life use case would be 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -181,7 +180,7 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+
   return total;
 };
 
