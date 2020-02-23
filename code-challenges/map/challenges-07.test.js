@@ -55,12 +55,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  let newArr = [];
-  arr.map((value) => {
-    let n = String.charCodeAt(value);
-    newArr.push(n);
-  });
-  return newArr;
+  return arr.map(char => char.charCodeAt());
 };
 
 
@@ -75,7 +70,15 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  return arr.map(value => {
+    if (value % 2 === 0){
+      return 'even';
+    } else if (value % 2 === 1){
+      return 'odd';
+    } else {
+      return 'N/A';
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,9 +171,9 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  let ability = obj.stat;
-  let name = arr.map(obj => ability.name);
-  let total = arr.map(obj => Math.sum(ability.effort + ability.baseStat));
+  return arr.map(stat => {
+    return {name: stat.stat.name, total:(stat.effort + stat.baseStat),};
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -224,7 +227,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
